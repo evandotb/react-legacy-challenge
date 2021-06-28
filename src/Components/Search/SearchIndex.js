@@ -44,12 +44,18 @@ export default class SearchIndex extends Component{
     super()
     this.state = {
      things: ['pen', 'marker', 'eraser', 'notebook', 'pencil', 'scissors', 'highlighter', 'stapler', 'paper clip', 'binder', 'hole punch', 'laminator', 'laminating sheets', 'protective sheets', 'index cards'],
-     search: ''
+     search: '',
+     results: []
    } 
  } 
+
+//  editSearch = (e) => {
+//   this.setState({search: e.target.value});
+//        this.searchFunction();
+//  }
    
  searchFunction = (e) =>  {
-    this.setState({search: e.target.value})
+  this.setState({search: e.target.value});
  }
 
     render(){
@@ -58,12 +64,12 @@ export default class SearchIndex extends Component{
         <div>
           <Input placeholder='Search Here' type='text' onChange={this.searchFunction} />
           <h4>Results:</h4> 
-          {thingsArray.map(e => 
+          {thingsArray.map(e =>  
             <p>
-            {e}
+              {e}
             </p>
-            )}
-        </div>
+          )}
+          </div>
         )
     }
-}
+  }
